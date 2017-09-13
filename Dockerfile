@@ -9,14 +9,14 @@ WORKDIR /myapp
 # run ember server on container start
 CMD ["ember", "server"]
 
-# Install watchman build dependencies 
-RUN \ 
+# Install watchman build dependencies
+RUN \
 	apt-get update -y &&\
 	apt-get install -y python-dev
- 
+
 # install watchman
 # Note: See the README.md to find out how to increase the
-# fs.inotify.max_user_watches value so that watchman will 
+# fs.inotify.max_user_watches value so that watchman will
 # work better with ember projects.
 RUN \
 	git clone https://github.com/facebook/watchman.git &&\
@@ -34,7 +34,7 @@ RUN \
 # install official phantomjs binaries
 RUN \
 	mkdir /tmp/phantomjs &&\
-	curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 | tar -xvj -C /tmp/phantomjs --strip-components=1 phantomjs-2.1.1-linux-x86_64/bin &&\
+	curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar -xvj -C /tmp/phantomjs --strip-components=1 phantomjs-1.9.8-linux-x86_64/bin &&\
 	mv /tmp/phantomjs/bin/phantomjs /usr/bin &&\
 	rm -rf /tmp/phantomjs
 
