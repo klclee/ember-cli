@@ -55,6 +55,12 @@ RUN apt-get update &&\
 RUN \
 	sed -i 's/"$@"/--no-sandbox "$@"/g' /opt/google/chrome/google-chrome
 
+RUN \
+	curl -o- -L https://yarnpkg.com/install.sh | bash
+
 # Install ember-cli
 RUN \
-	npm install -g ember-cli@2.15.1
+	yarn global add ember-cli@2.15.1
+
+RUN \
+	yarn global add firebase-tools
