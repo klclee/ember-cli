@@ -28,10 +28,6 @@ RUN \
 	make &&\
 	make install
 
-# install bower
-RUN \
-	npm install -g bower@1.8.8
-
 # install chrome for default testem config (as of ember-cli 2.15.0)
 RUN \
     apt-get update &&\
