@@ -1,5 +1,5 @@
 FROM node:12.19.0
-MAINTAINER Dan Lynn <docker@danlynn.org>
+LABEL maintainer="Dan Lynn <docker@danlynn.org>"
 
 # ember server on port 4200
 # livereload server on port 7020 (changed in v2.17.0 from 49153)
